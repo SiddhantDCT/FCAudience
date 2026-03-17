@@ -1,9 +1,6 @@
 # FCAudience
 
 > A retro-styled live football tracker Chrome extension — built for fans, by a fan.
-
-![FCAudience Icon](icon128.png)
-
 --------------------------------------------------------
 
 ## About
