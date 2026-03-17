@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FCAudience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="badge">FC</div>
+    <div class="header-text">
+      <h1>FCAUDIENCE</h1>
+      <p class="tagline">LIVE FOOTBALL TRACKER</p>
+    </div>
+    <div class="header-right">
+      <div class="status-dot" id="statusDot" title="No live matches"></div>
+      <div class="refresh-ring">
+        <svg viewBox="0 0 32 32">
+          <circle class="ring-track" cx="16" cy="16" r="13"/>
+          <circle class="ring-fill" id="ringFill" cx="16" cy="16" r="13"/>
+        </svg>
+        <span class="ring-label" id="ringLabel">2:00</span>
+      </div>
+    </div>
+  </div>
+  <div class="header-stripe"></div>
+</header>
+
+<div class="search-section">
+  <div class="search-wrap">
+    <span class="search-icon-label">SEARCH</span>
+    <input id="teamInput" placeholder="TYPE TEAM NAME..." autocomplete="off" spellcheck="false">
+    <div id="suggestions" class="suggestions hidden"></div>
+  </div>
+</div>
+
+<section class="fav-section">
+  <div class="section-label">
+    <span class="label-line"></span>FAVOURITES<span class="label-line"></span>
+  </div>
+  <ul id="favorites"><li class="empty-msg">-- No teams added yet --</li></ul>
+</section>
+
+<div id="standingsPanel" class="panel hidden">
+  <div class="panel-header">
+    <span class="panel-title" id="standingsTitle">STANDINGS</span>
+    <button class="panel-close" id="standingsClose">CLOSE</button>
+  </div>
+  <div id="standingsContent"></div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="live">
+    <span class="live-pip"></span>LIVE
+  </button>
+  <button class="tab-btn" data-tab="upcoming">UPCOMING</button>
+  <button class="tab-btn" data-tab="other">ALL MATCHES</button>
+</div>
+
+<div id="tab-live" class="tab-panel active">
+  <div class="pinned-zone" id="pinnedZone" style="display:none">
+    <div class="pinned-label">PINNED MATCH</div>
+    <div id="pinnedCard"></div>
+  </div>
+  <div id="live"><p class="loading-msg">Fetching live matches...</p></div>
+</div>
+
+<div id="tab-upcoming" class="tab-panel hidden">
+  <div class="filter-bar">
+    <label class="filter-label">FILTER BY LEAGUE</label>
+    <select class="league-select" id="upcomingLeagueFilter">
+      <option value="all">ALL LEAGUES</option>
+    </select>
+  </div>
+  <div id="upcoming"><p class="loading-msg">Fetching upcoming matches...</p></div>
+</div>
+
+<div id="tab-other" class="tab-panel hidden">
+  <div id="other"><p class="loading-msg">Fetching all matches...</p></div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

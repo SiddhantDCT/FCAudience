@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "FCAudience",
+  "version": "4.0",
+  "description": "Live football tracker with retro scoreboard UI. Track favourite teams, live scores, standings, and upcoming fixtures.",
+  "permissions": ["storage", "alarms", "notifications"],
+  "host_permissions": [
+    "https://v3.football.api-sports.io/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "icon16.png",
+      "32":  "icon32.png",
+      "48":  "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16":  "icon16.png",
+    "32":  "icon32.png",
+    "48":  "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
